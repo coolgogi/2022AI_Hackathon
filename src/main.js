@@ -2,7 +2,7 @@
 
 const app = require('./app')
 
-const PORT = 5050
+const PORT = 5000
 
 app.listen(PORT, () => {
   /* eslint-disable-next-line no-console */

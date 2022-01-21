@@ -4,11 +4,21 @@ const { spawn } = require('child_process')
 
 const app = express()
 
+app.use(express.json())
+app.use(express.urlencoded())
 app.set('views', 'src/views')
-app.set('view engine', 'pug')
+app.set('view engine', 'ejs')
+app.engine('html', require('ejs').renderFile)
+
+// app.set('view engine', 'html')
 
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('3HAN.html')
+})
+
+app.post('/', (req, res) => {
+  console.log(req.body)
+  res.send('good')
 })
 
 app.get('/zz', (req, res) => {
