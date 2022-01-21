@@ -2,7 +2,7 @@
 
 <html lang="ko">
     <head>
-        <link rel="stylesheet" href="../public/style.css">
+        <link rel="stylesheet" href="../public/index.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -18,11 +18,17 @@
     </head>
 
     <body style="padding: 0px 17px 0px 0px;" aria-hidden="false">
-    
+        <section class="section">
+            <h1 class="title">자생식물 씨앗 추천 서비스</h1>
+        </section>
         <div class="image-upload-wrap">
             <video  id="myVideo" width="120" height="90" style="border: 1px solid #ddd;"></video>
             <canvas id="myCanvas" width="400" height="300" style="border: 1px solid #ddd;"></canvas><br>
-            <input type=button value="사진찍기" id="button" onclick="{_takeSnapshot()}"><br>
+            <div class="pt-3 image-title-wrap">
+                <button type="button p-2" class="try-again-btn" value="사진찍기" id="button" onclick="{_takeSnapshot()}">
+                    <span class="try-again-text">사진찍기</span>
+                </button>
+            </div><br>
             
             <img id = "myImage" heigth = 0 width = 0>
             
@@ -32,7 +38,7 @@
         </div>
         <center>
             <form action="/" method="post">
-                <label for="Color"> <strong>가장 좋아하는 색은 무엇인가요??</strong> </label>
+                <h3 class="pb-2 d-flex justify-content-center">가장 좋아하는 색은 무엇인가요?</h3>
                 <div class="Radio">
                     <input type = "radio", name = "Color" value = "0" onclick = 'setColor(event)'> 초록
                     <input type = "radio", name = "Color" value = "1" onclick = 'setColor(event)'> 하양
@@ -42,7 +48,7 @@
                 </div>
                 
             
-                <label for="Season"> <strong>가장 좋아하는 계절은 무엇인가요??</strong> </label>
+                <h3 class="pb-2 d-flex justify-content-center">가장 좋아하는 계절은 무엇인가요??</h3>
                 <div>
                     <input type = "radio", name = "Season" value = "0" onclick = 'setSeason(event)'> 봄
                     <input type = "radio", name = "Season" value = "1" onclick = 'setSeason(event)'> 여름
@@ -50,7 +56,7 @@
                     <input type = "radio", name = "Season" value = "3" onclick = 'setSeason(event)'> 겨울
                 </div>
 
-                <label for="Word"> <strong>가장 좋아하는 단어는 무엇인가요??</strong> </label>
+                <h3 class="pb-2 d-flex justify-content-center">가장 좋아하는 단어는 무엇인가요??</h3>
                 <div>
                     <input type = "radio", name = "Word" value = "0" onclick = 'setWord(event)'> 시원
                     <input type = "radio", name = "Word" value = "1" onclick = 'setWord(event)'> 수수
@@ -58,7 +64,7 @@
                     <input type = "radio", name = "Word" value = "3" onclick = 'setWord(event)'> 화려
                 </div>
             
-                <label for="MBTI"> <strong>본인의 MBTI 앞 두글자는 무엇인가요??</strong> </label> 
+                <h3 class="pb-2 d-flex justify-content-center">본인의 MBTI 앞 두글자는 무엇인가요??</h3>
                 <div>
                     <input type = "radio", name = "MBTI" value = "0" onclick = 'setMBTI(event)'> 없음/모름
                     <input type = "radio", name = "MBTI" value = "1" onclick = 'setMBTI(event)'> ES
@@ -67,7 +73,7 @@
                     <input type = "radio", name = "MBTI" value = "4" onclick = 'setMBTI(event)'> IN
                 </div>
             
-                <label for="MBTI2"> <strong>본인의 MBTI 뒤 두글자는 무엇인가요??</strong> </label>
+                <h3 class="pb-2 d-flex justify-content-center">본인의 MBTI 뒤 두글자는 무엇인가요??</h3>
                 <div>
                     <input type = "radio", name = "MBTI2" value = "0" onclick = 'setMBTI2(event)'> 없음/모름
                     <input type = "radio", name = "MBTI2" value = "1" onclick = 'setMBTI2(event)'> TJ
@@ -75,11 +81,15 @@
                     <input type = "radio", name = "MBTI2" value = "3" onclick = 'setMBTI2(event)'> FJ
                     <input type = "radio", name = "MBTI2" value = "4" onclick = 'setMBTI2(event)'> FP
                 </div>
-                <div class="image-title-wrap">
-                    <button type="button p-2" class="try-again-btn" > 제출하기 </button>
+                <br>
+                <div class="pt-3 image-title-wrap">
+                    <button type="button p-2" class="try-again-btn">
+                        <span class="try-again-text">제출하기</span>
+                    </button>
                 </div>
+                    
             </form>
         </center>
-        <script src="../public/Webcam.js"></script>
+        <script src="../public/index.js"></script>
     </body>
 </html>
