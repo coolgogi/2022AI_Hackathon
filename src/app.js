@@ -123,7 +123,7 @@ app.get('/result/:no', (req, res) => {
   res.render('result', {
     no,
     name: FLOWERS[no],
-    imgURL: `upload/flowers/${no}${FLOWERS[no]}`,
+    imgURL: `/upload/flower/${no}${FLOWERS[no]}.jpg`,
   })
 })
 
