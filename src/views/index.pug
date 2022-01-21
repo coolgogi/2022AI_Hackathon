@@ -17,13 +17,16 @@ html(lang="ko")
         title 자생식물 씨앗 추천 서비스
 
     body(style="padding: 0px 17px 0px 0px;" aria-hidden="false")
-        div(class="image-upload-wrap")
-            video(id="myVideo" width="120" height="90" style="border: 1px solid #ddd;")
-            canvas(id="myCanvas" width="400" height="300" style="border: 1px solid #ddd;")
-            button(id="button" onclick="{_takeSnapshot()}") 사진찍기
-            
-            img(id = "myImage" heigth = 0 width = 0)
-            
-            div(class="drag-text")
-                h3(class="upload-text") 얼굴 사진을 촬영하세요!
+
+        div(class="image-holder")
+            section(class="section")
+                h1(class="title") 자생식물 씨앗 추천 서비스
+            div(class="image-upload-wrap")
+                div(class="drag-text")
+                    h3(class="upload-text") 얼굴 사진을 촬영하세요!
+                div(class="screen")
+                    video(id="myVideo" width="400" height="300" style="border: 1px solid #ddd;")
+                    canvas(id="myCanvas" width="400" height="300" style="border: 1px solid #ddd;")
+                div(class="btn_cont")
+                    button(type="button p-2" class="try-again-btn" id="button" onclick="{_takeSnapshot()}") 사진찍기
         script(src="/public/index.js")

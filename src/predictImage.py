@@ -15,7 +15,7 @@ def goPredict(url):
 	data[0] = normalized_image_array
 	prediction = model.predict(data)
 	score = tf.nn.softmax(prediction[0])
-	return np.argmax(score)
+	print(np.argmax(score))
 
 if __name__ == '__main__':
     imageResult = goPredict(sys.argv[1])

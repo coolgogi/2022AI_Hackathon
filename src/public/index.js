@@ -37,14 +37,14 @@ function takeSnapshot() {
   const array = new Uint32Array(5)
   window.crypto.getRandomValues(array)
   const crypt = array.toString().replaceAll(',', '')
-  const dataURL = myCanvasElement.toDataURL('image/png')
+  const dataURL = myCanvasElement.toDataURL('image/jpeg', 0.5)
   const aTag = document.createElement('a')
-  aTag.download = `${crypt}.png`
+  aTag.download = `${crypt}.jpeg`
   console.log(crypt)
   aTag.href = dataURL
   aTag.click()
 
-  submitToserver(`${crypt}.png`)
+  submitToserver(`${crypt}.jpeg`)
 }
 
 function submitToserver(filename) {
