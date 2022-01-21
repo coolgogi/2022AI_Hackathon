@@ -11,6 +11,7 @@ body {
   border: solid 1.5px #f6f7fa;
   background-color: #f6f7fa;
 }
+
 .file-upload-btn {
   width: 100%;
   margin: 0;
@@ -526,15 +527,4 @@ input:checked + label > .knob > i:before {
 .snackbar__anim__down {
   opacity: 1;
   transform: translateY(84px);
-}
-
-.toggle3 input[type=radio]{
-  display: none;
-}
-.toggle3 input[type=radio] + label {
-  color: #e0e0e0;
-  font-size: 5em;
-}
-.toggle3 input[type=radio]:checked + label {
-  color: #000;
 }
