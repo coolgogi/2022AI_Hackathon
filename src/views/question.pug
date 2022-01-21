@@ -1,0 +1,84 @@
+html(lang="ko")
+    head
+        meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        meta(name="title" content="식물상 테스트")
+        meta(name="subject" content="얼굴로 보는 인공지능 자생식물 추천서비스")
+        meta(name="keywords" content="식물, 자생식물, 인공지능, 추천, 서비스, 제주도")
+        meta(name="author" content="3HAN")
+        meta(name="description" content="사진을 찍고 몇가지 설문 조사에 답을 하면 나에게 맞는 제주도 식의약용 자생식물을 찾아줍니다!")
+        meta(property="og:type" content="website")
+        meta(property="og:title" content="식물상 테스트")
+        meta(property="og:description" content="사진을 찍고 몇가지 설문 조사에 답을 하면 나에게 맞는 제주도 식의약용 자생식물을 찾아줍니다!")
+        title 자생식물 씨앗 추천 서비스
+
+    body
+        form(action=nextURL method="post")
+            label(for="Color")
+                strong 가장 좋아하는 색은 무엇인가요?
+            div
+                input(type = "radio", name = "Color" value = "0")
+                span 초록
+                input(type = "radio", name = "Color" value = "1")
+                span 하양
+                input(type = "radio", name = "Color" value = "2") 
+                span 노랑
+                input(type = "radio", name = "Color" value = "3")
+                span 빨강
+                input(type = "radio", name = "Color" value = "4")
+                span 보라    
+        
+            label(for="Season")
+                strong 가장 좋아하는 계절은 무엇인가요?
+            div
+                input(type = "radio", name = "Season" value = "0") 
+                span 봄
+                input(type = "radio", name = "Season" value = "1") 
+                span 여름
+                input(type = "radio", name = "Season" value = "2") 
+                span 가을
+                input(type = "radio", name = "Season" value = "3") 
+                span 겨울
+            
+            label(for="Word")
+                strong 가장 좋아하는 단어는 무엇인가요?
+            div
+                input(type = "radio", name = "Word" value = "0")
+                span 시원
+                input(type = "radio", name = "Word" value = "1")
+                span 수수
+                input(type = "radio", name = "Word" value = "2")
+                span 포근
+                input(type = "radio", name = "Word" value = "3")
+                span 화려
+        
+            label(for="MBTI")
+                strong 본인의 MBTI 앞 두글자는 무엇인가요?
+            div
+                input(type = "radio", name = "MBTI" value = "0") 
+                span 모름
+                input(type = "radio", name = "MBTI" value = "1") 
+                span ES
+                input(type = "radio", name = "MBTI" value = "2") 
+                span EN
+                input(type = "radio", name = "MBTI" value = "3") 
+                span IS
+                input(type = "radio", name = "MBTI" value = "4") 
+                span IN
+        
+            label(for="MBTI2")
+                strong 본인의 MBTI 뒤 두글자는 무엇인가요?
+            div
+               input(type = "radio", name = "MBTI2" value = "0") 
+               span 모름
+               input(type = "radio", name = "MBTI2" value = "1") 
+               span TJ
+               input(type = "radio", name = "MBTI2" value = "2") 
+               span TP
+               input(type = "radio", name = "MBTI2" value = "3") 
+               span FJ
+               input(type = "radio", name = "MBTI2" value = "4") 
+               span FP
+        
+            button 제출하기

@@ -7,18 +7,36 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded())
 app.set('views', 'src/views')
-app.set('view engine', 'ejs')
-app.engine('html', require('ejs').renderFile)
-
-// app.set('view engine', 'html')
+app.set('view engine', 'pug')
+// app.engine('html', require('ejs').renderFile)
 
 app.get('/', (req, res) => {
-  res.render('3HAN.html')
+  res.render('index')
 })
 
-app.post('/', (req, res) => {
+app.post('/image', (req, res) => {
+  res.redirect(`/question/${req.body.imgname}`)
+})
+
+app.get('/question/:filename', (req, res) => {
+  const { filename } = req.params
+  const result = spawn('python3', ['src/predictImage.py', filename])
+  result.stdout.on('data', (data) => {
+    console.log(data.toString())
+  })
+  result.stderr.on('data', (data) => {
+    console.log(data.toString())
+  })
+  res.render('')
+})
+
+app.get('/question', (req, res) => {
+  res.render('question')
+})
+
+app.post('/answer', (req, res) => {
   console.log(req.body)
-  res.send('good')
+  res.send('하앙')
 })
 
 app.get('/zz', (req, res) => {

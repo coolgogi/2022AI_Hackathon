@@ -33,8 +33,34 @@ function takeSnapshot() {
     myCanvasElement.width,
     myCanvasElement.height
   )
-  const imgData = myCanvasElement.toDataURL()
-  return imgData
+
+  const array = new Uint32Array(5)
+  window.crypto.getRandomValues(array)
+  const crypt = array.toString().replaceAll(',', '')
+  const dataURL = myCanvasElement.toDataURL('image/png')
+  const aTag = document.createElement('a')
+  aTag.download = `${crypt}.png`
+  console.log(crypt)
+  aTag.href = dataURL
+  aTag.click()
+
+  submitToserver(`${crypt}.png`)
+}
+
+function submitToserver(filename) {
+  var form = document.createElement('form')
+  form.setAttribute('charset', 'UTF-8')
+  form.setAttribute('method', 'Post') //Post 방식
+  form.setAttribute('action', '/image') //요청 보낼 주소
+
+  var hiddenField = document.createElement('input')
+  hiddenField.setAttribute('type', 'hidden')
+  hiddenField.setAttribute('name', 'imgname')
+  hiddenField.setAttribute('value', filename)
+  form.appendChild(hiddenField)
+  document.body.appendChild(form)
+
+  form.submit()
 }
 
 let _snapshot
@@ -42,19 +68,4 @@ function _takeSnapshot() {
   let myImage = document.getElementById('myImage')
   myImage.src = takeSnapshot()
   document.getElementById('button').value = '다시찍기'
-}
-
-function submit(Face, Color, Season, Word, MBTI, MBTI2) {
-  document.write(Face)
-  document.write('\n')
-  document.write(Color)
-  document.write('\n')
-  document.write(Season)
-  document.write('\n')
-  document.write(Word)
-  document.write('\n')
-  document.write(MBTI)
-  document.write('\n')
-  document.write(MBTI2)
-  // 머신러닝 돌리기
 }
