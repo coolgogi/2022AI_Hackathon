@@ -15,9 +15,8 @@ html(lang="ko")
 
     body
         form(action=nextURL method="post")
-            label(for="Color")
-                strong 가장 좋아하는 색은 무엇인가요?
-            div
+            h3(class="pb-2 d-flex justify-content-center") 가장 좋아하는 색은 무엇인가요?
+            div(class="Radio")
                 input(type = "radio", name = "Color" value = "0")
                 span 초록
                 input(type = "radio", name = "Color" value = "1")
@@ -29,9 +28,8 @@ html(lang="ko")
                 input(type = "radio", name = "Color" value = "4")
                 span 보라    
         
-            label(for="Season")
-                strong 가장 좋아하는 계절은 무엇인가요?
-            div
+            h3(class="pb-2 d-flex justify-content-center") 가장 좋아하는 계절은 무엇인가요?
+            div(class="Radio")
                 input(type = "radio", name = "Season" value = "0") 
                 span 봄
                 input(type = "radio", name = "Season" value = "1") 
@@ -41,9 +39,8 @@ html(lang="ko")
                 input(type = "radio", name = "Season" value = "3") 
                 span 겨울
             
-            label(for="Word")
-                strong 가장 좋아하는 단어는 무엇인가요?
-            div
+            h3(class="pb-2 d-flex justify-content-center") 가장 좋아하는 단어는 무엇인가요?
+            div(class="Radio")
                 input(type = "radio", name = "Word" value = "0")
                 span 시원
                 input(type = "radio", name = "Word" value = "1")
@@ -53,9 +50,8 @@ html(lang="ko")
                 input(type = "radio", name = "Word" value = "3")
                 span 화려
         
-            label(for="MBTI")
-                strong 본인의 MBTI 앞 두글자는 무엇인가요?
-            div
+            h3(class="pb-2 d-flex justify-content-center") 본인의 MBTI 앞 두글자는 무엇인가요?
+            div(class="Radio")
                 input(type = "radio", name = "MBTI" value = "0") 
                 span 모름
                 input(type = "radio", name = "MBTI" value = "1") 
@@ -67,9 +63,8 @@ html(lang="ko")
                 input(type = "radio", name = "MBTI" value = "4") 
                 span IN
         
-            label(for="MBTI2")
-                strong 본인의 MBTI 뒤 두글자는 무엇인가요?
-            div
+            h3(class="pb-2 d-flex justify-content-center") 본인의 MBTI 뒤 두글자는 무엇인가요?
+            div(class="Radio")
                input(type = "radio", name = "MBTI2" value = "0") 
                span 모름
                input(type = "radio", name = "MBTI2" value = "1") 
@@ -81,4 +76,6 @@ html(lang="ko")
                input(type = "radio", name = "MBTI2" value = "4") 
                span FP
         
-            button 제출하기
+            div(class="pt-3 image-title-wrap")
+                button(type="button p-2" class="try-again-btn")
+                    span(class="try-again-text") 제출하기
