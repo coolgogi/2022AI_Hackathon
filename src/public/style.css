@@ -67,11 +67,11 @@ body {
   background-color: #ffffff;
 }
 
-.image-dropping,
+/* .image-dropping,
 .image-upload-wrap:hover {
   background-color: #35465d82;
   border: 1.5px dashed #ffffff;
-}
+} */
 
 .image-title-wrap {
   padding: 0 15px 15px 15px;
@@ -526,4 +526,15 @@ input:checked + label > .knob > i:before {
 .snackbar__anim__down {
   opacity: 1;
   transform: translateY(84px);
+}
+
+.toggle3 input[type=radio]{
+  display: none;
+}
+.toggle3 input[type=radio] + label {
+  color: #e0e0e0;
+  font-size: 5em;
+}
+.toggle3 input[type=radio]:checked + label {
+  color: #000;
 }

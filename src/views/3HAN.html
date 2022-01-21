@@ -2,7 +2,7 @@
 
 <html lang="ko">
     <head>
-        <link rel="stylesheet" href="/public/style.css">
+        <link rel="stylesheet" href="../public/style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -18,6 +18,7 @@
     </head>
 
     <body style="padding: 0px 17px 0px 0px;" aria-hidden="false">
+    
         <div class="image-upload-wrap">
             <video  id="myVideo" width="120" height="90" style="border: 1px solid #ddd;"></video>
             <canvas id="myCanvas" width="400" height="300" style="border: 1px solid #ddd;"></canvas><br>
@@ -29,53 +30,56 @@
                 <h3 class="upload-text">얼굴 사진을 촬영하세요!</h3><br>
             </div>
         </div>
-        <form action="/" method="post">
-            <label for="Color"> <strong>가장 좋아하는 색은 무엇인가요??</strong> </label>
-            <div>
-                <input type = "radio", name = "Color" value = "0" onclick = 'setColor(event)'> 초록
-                <input type = "radio", name = "Color" value = "1" onclick = 'setColor(event)'> 하양
-                <input type = "radio", name = "Color" value = "2" onclick = 'setColor(event)'> 노랑
-                <input type = "radio", name = "Color" value = "3" onclick = 'setColor(event)'> 빨강
-                <input type = "radio", name = "Color" value = "4" onclick = 'setColor(event)'> 보라
-            </div>
+        <center>
+            <form action="/" method="post">
+                <label for="Color"> <strong>가장 좋아하는 색은 무엇인가요??</strong> </label>
+                <div class="Radio">
+                    <input type = "radio", name = "Color" value = "0" onclick = 'setColor(event)'> 초록
+                    <input type = "radio", name = "Color" value = "1" onclick = 'setColor(event)'> 하양
+                    <input type = "radio", name = "Color" value = "2" onclick = 'setColor(event)'> 노랑
+                    <input type = "radio", name = "Color" value = "3" onclick = 'setColor(event)'> 빨강
+                    <input type = "radio", name = "Color" value = "4" onclick = 'setColor(event)'> 보라
+                </div>
+                
             
-        
-            <label for="Season"> <strong>가장 좋아하는 계절은 무엇인가요??</strong> </label>
-            <div>
-                <input type = "radio", name = "Season" value = "0" onclick = 'setSeason(event)'> 봄
-                <input type = "radio", name = "Season" value = "1" onclick = 'setSeason(event)'> 여름
-                <input type = "radio", name = "Season" value = "2" onclick = 'setSeason(event)'> 가을
-                <input type = "radio", name = "Season" value = "3" onclick = 'setSeason(event)'> 겨울
-            </div>
-        
-            <label for="Word"> <strong>가장 좋아하는 단어는 무엇인가요??</strong> </label>
-            <div>
-                <input type = "radio", name = "Word" value = "0" onclick = 'setWord(event)'> 시원
-                <input type = "radio", name = "Word" value = "1" onclick = 'setWord(event)'> 수수
-                <input type = "radio", name = "Word" value = "2" onclick = 'setWord(event)'> 포근
-                <input type = "radio", name = "Word" value = "3" onclick = 'setWord(event)'> 화려
-            </div>
-        
-            <label for="MBTI"> <strong>본인의 MBTI 앞 두글자는 무엇인가요??</strong> </label> 
-            <div>
-                <input type = "radio", name = "MBTI" value = "0" onclick = 'setMBTI(event)'> 없음/모름
-                <input type = "radio", name = "MBTI" value = "1" onclick = 'setMBTI(event)'> ES
-                <input type = "radio", name = "MBTI" value = "2" onclick = 'setMBTI(event)'> EN
-                <input type = "radio", name = "MBTI" value = "3" onclick = 'setMBTI(event)'> IS
-                <input type = "radio", name = "MBTI" value = "4" onclick = 'setMBTI(event)'> IN
-            </div>
-        
-            <label for="MBTI2"> <strong>본인의 MBTI 뒤 두글자는 무엇인가요??</strong> </label>
-            <div>
-                <input type = "radio", name = "MBTI2" value = "0" onclick = 'setMBTI2(event)'> 없음/모름
-                <input type = "radio", name = "MBTI2" value = "1" onclick = 'setMBTI2(event)'> TJ
-                <input type = "radio", name = "MBTI2" value = "2" onclick = 'setMBTI2(event)'> TP
-                <input type = "radio", name = "MBTI2" value = "3" onclick = 'setMBTI2(event)'> FJ
-                <input type = "radio", name = "MBTI2" value = "4" onclick = 'setMBTI2(event)'> FP
-            </div>
-        
-            <button> 제출하기 </button>
-        </form>
-        <script src="/public/Webcam.js"></script>
+                <label for="Season"> <strong>가장 좋아하는 계절은 무엇인가요??</strong> </label>
+                <div>
+                    <input type = "radio", name = "Season" value = "0" onclick = 'setSeason(event)'> 봄
+                    <input type = "radio", name = "Season" value = "1" onclick = 'setSeason(event)'> 여름
+                    <input type = "radio", name = "Season" value = "2" onclick = 'setSeason(event)'> 가을
+                    <input type = "radio", name = "Season" value = "3" onclick = 'setSeason(event)'> 겨울
+                </div>
+
+                <label for="Word"> <strong>가장 좋아하는 단어는 무엇인가요??</strong> </label>
+                <div>
+                    <input type = "radio", name = "Word" value = "0" onclick = 'setWord(event)'> 시원
+                    <input type = "radio", name = "Word" value = "1" onclick = 'setWord(event)'> 수수
+                    <input type = "radio", name = "Word" value = "2" onclick = 'setWord(event)'> 포근
+                    <input type = "radio", name = "Word" value = "3" onclick = 'setWord(event)'> 화려
+                </div>
+            
+                <label for="MBTI"> <strong>본인의 MBTI 앞 두글자는 무엇인가요??</strong> </label> 
+                <div>
+                    <input type = "radio", name = "MBTI" value = "0" onclick = 'setMBTI(event)'> 없음/모름
+                    <input type = "radio", name = "MBTI" value = "1" onclick = 'setMBTI(event)'> ES
+                    <input type = "radio", name = "MBTI" value = "2" onclick = 'setMBTI(event)'> EN
+                    <input type = "radio", name = "MBTI" value = "3" onclick = 'setMBTI(event)'> IS
+                    <input type = "radio", name = "MBTI" value = "4" onclick = 'setMBTI(event)'> IN
+                </div>
+            
+                <label for="MBTI2"> <strong>본인의 MBTI 뒤 두글자는 무엇인가요??</strong> </label>
+                <div>
+                    <input type = "radio", name = "MBTI2" value = "0" onclick = 'setMBTI2(event)'> 없음/모름
+                    <input type = "radio", name = "MBTI2" value = "1" onclick = 'setMBTI2(event)'> TJ
+                    <input type = "radio", name = "MBTI2" value = "2" onclick = 'setMBTI2(event)'> TP
+                    <input type = "radio", name = "MBTI2" value = "3" onclick = 'setMBTI2(event)'> FJ
+                    <input type = "radio", name = "MBTI2" value = "4" onclick = 'setMBTI2(event)'> FP
+                </div>
+                <div class="image-title-wrap">
+                    <button type="button p-2" class="try-again-btn" > 제출하기 </button>
+                </div>
+            </form>
+        </center>
+        <script src="../public/Webcam.js"></script>
     </body>
 </html>
