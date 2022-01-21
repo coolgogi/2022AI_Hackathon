@@ -1,0 +1,32 @@
+body {
+  font-family: 'Jua', sans-serif;
+  padding: 0;
+  background-color: #e1ffe0;
+}
+
+.container {
+  width: 100%;
+  background-color: #e1ffe0;
+  text-align: center;
+}
+
+form {
+  width: 60%;
+  margin: 0 auto;
+  position: relative;
+  object-fit: contain;
+  border-radius: 10px;
+  border: dashed 1.5px #35465d;
+  background-color: #ffffff;
+}
+
+.try-again-btn {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  width: 100px;
+  height: 50px;
+  border-radius: 40px;
+  border: solid 1.5px #35465d;
+  background-color: #35465d;
+  color: white;
+}
