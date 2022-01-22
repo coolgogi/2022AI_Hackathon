@@ -1,0 +1,27 @@
+body {
+  font-family: 'Jua', sans-serif;
+  padding: 0;
+  background-color: #e1ffe0;
+}
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #e1ffe0;
+  text-align: center;
+}
+
+.page {
+  background-color: ff;
+  width: 60%;
+  margin: 0 auto;
+  position: relative;
+  object-fit: contain;
+  border-radius: 10px;
+  border: dashed 1.5px #35465d;
+  background-color: white;
+}
+
+.info {
+  margin-top: 10px;
+}

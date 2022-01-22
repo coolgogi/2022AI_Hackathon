@@ -5,7 +5,7 @@ const express = require('express')
 const { spawn } = require('child_process')
 
 const app = express()
-
+const animalLabel = ['고양이', '강아지', '공룡', '여우', '토끼']
 app.use(express.json())
 app.use(express.urlencoded())
 app.set('views', 'src/views')
@@ -76,6 +76,7 @@ const FLOWERS = [
 ]
 
 app.get('/', (req, res) => {
+  console.log('사용자 접속!')
   res.render('index')
 })
 
@@ -87,15 +88,14 @@ app.get('/question/:filename', (req, res) => {
   const { filename } = req.params
   const filepath = `/mnt/c/Users/samsung/Downloads/${filename}`
   const result = spawn('python3', ['src/predictImage.py', filepath])
-
   result.stdout.on('data', (data) => {
+    const answer = data.toString()
+    console.log(`가장 닮은 동물은 ${animalLabel[Number(answer)]} 입니다.`)
     res.render('question', {
       nextURL: `/answer/${data.toString()}`,
     })
   })
-  result.stderr.on('data', (data) => {
-    console.log(data.toString())
-  })
+  result.stderr.on('data', (data) => {})
 })
 
 app.post('/answer/:id', (req, res) => {
@@ -108,18 +108,17 @@ app.post('/answer/:id', (req, res) => {
     req.body.MBTI,
     req.body.MBTI2,
   ])
-  result.stdout.on('data', (result1) => {
-    res.redirect(`/result/${result1.toString()}`)
+  result.stdout.on('data', (data) => {
+    const answer = data.toString()
+    console.log(`가장 어울리는 식물은 ${FLOWERS[Number(answer)]} 입니다.`)
+    res.redirect(`/result/${answer}`)
   })
-  result.stderr.on('data', (result1) => {
-    console.log(result1.toString())
-  })
+  result.stderr.on('data', (data) => {})
 })
 
 app.get('/result/:no', (req, res) => {
   const num = req.params.no
   const no = Number(num)
-
   res.render('result', {
     no,
     name: FLOWERS[no],
