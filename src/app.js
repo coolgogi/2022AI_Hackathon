@@ -1,5 +1,6 @@
 // @ts-check
 
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 const express = require('express')
 const { spawn } = require('child_process')
@@ -95,6 +96,7 @@ app.get('/question/:filename', (req, res) => {
       nextURL: `/answer/${data.toString()}`,
     })
   })
+
   result.stderr.on('data', (data) => {
     console.log('AI가 분석 중 입니다 ...')
   })
@@ -115,6 +117,7 @@ app.post('/answer/:id', (req, res) => {
     console.log(`가장 어울리는 식물은 ${FLOWERS[Number(answer)]} 입니다.`)
     res.redirect(`/result/${answer}`)
   })
+  // @ts-ignore
   result.stderr.on('data', (data) => {
     console.log('AI가 분석 중 입니다 ...')
   })
