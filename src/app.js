@@ -95,7 +95,9 @@ app.get('/question/:filename', (req, res) => {
       nextURL: `/answer/${data.toString()}`,
     })
   })
-  result.stderr.on('data', (data) => {})
+  result.stderr.on('data', (data) => {
+    console.log('AI가 분석 중 입니다 ...')
+  })
 })
 
 app.post('/answer/:id', (req, res) => {
@@ -113,12 +115,15 @@ app.post('/answer/:id', (req, res) => {
     console.log(`가장 어울리는 식물은 ${FLOWERS[Number(answer)]} 입니다.`)
     res.redirect(`/result/${answer}`)
   })
-  result.stderr.on('data', (data) => {})
+  result.stderr.on('data', (data) => {
+    console.log('AI가 분석 중 입니다 ...')
+  })
 })
 
 app.get('/result/:no', (req, res) => {
   const num = req.params.no
   const no = Number(num)
+  console.log('결과가 나왔습니다. 키오스크에서 씨앗이 나옵니다.')
   res.render('result', {
     no,
     name: FLOWERS[no],
